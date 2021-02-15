@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class VehicleMakes extends Model
+class VehicleMake extends Model
 {
     protected $fillable = [
-        'nombre',
-        'email',
-        'phone',
-        'mensaje',
+        'id',
+        'name',
+        'code',
+        'logo',
     ];
 }

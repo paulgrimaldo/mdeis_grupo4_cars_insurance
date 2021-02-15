@@ -30,7 +30,17 @@
                         <a class="nav-link {{ activeMenu('/') }}" href="{{ route('home') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ activeMenu('messages') }}" href="{{ route('home') }}">Mensajes</a>
+                        <a class="nav-link {{ activeMenu('messages') }}" href="{{ route('home') }}">Cotización</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Configuraciones <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('vehicle_makes.index') }}"> Marcas de Vehiculos</a>
+                            <a class="dropdown-item" href="{{ route('vehicle_models.index') }}"> Modelos de Vehiculos</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -49,8 +59,16 @@
                             </form>
                         </div>
                     </li>
+                    
                 @endguest
             </ul>
         </div>
     </div>
 </nav>
+
+
+<div class="row">
+                            <div class="col-md-12 col-lg-12 text-right" style="margin-top:10px;margin-bottom: 10px;">
+                                
+                            </div>
+                        </div>   
