@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStateTable extends Migration
+class CreateDriversTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class CreateStateTable extends Migration
      */
     public function up()
     {
-        Schema::create('state', function (Blueprint $table) {
+        Schema::create('drivers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('phone_number');
+            $table->string('dni');
+            $table->string('gender');
+            $table->tinyInteger('active');
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ class CreateStateTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('state');
+        Schema::dropIfExists('drivers');
     }
 }

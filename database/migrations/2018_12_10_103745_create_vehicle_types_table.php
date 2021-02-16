@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBranchOfficeTable extends Migration
+class CreateVehicleTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateBranchOfficeTable extends Migration
      */
     public function up()
     {
-        Schema::create('branch_office', function (Blueprint $table) {
+        Schema::create('vehicle_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('address');
-            $table->double('discount_min',12, 2);   
-            $table->unsignedBigInteger('state_id');
-            $table->foreign('state_id')->references('id')->on('state');           
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateBranchOfficeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('branch_office');
+        Schema::dropIfExists('vehicle_types');
     }
 }

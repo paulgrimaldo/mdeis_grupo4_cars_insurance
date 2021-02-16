@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Year extends Model
 {
-    protected $table='year';
+    protected $table='years';
     protected $primaryKey='id';
     public $timestamps=true;
     protected $fillable =[

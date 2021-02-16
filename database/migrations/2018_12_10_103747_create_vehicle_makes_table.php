@@ -14,10 +14,12 @@ class CreateVehicleMakesTable extends Migration
     public function up()
     {
         Schema::create('vehicle_makes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('code');
             $table->text('logo')->nullable();
+            $table->unsignedBigInteger('vehicle_model_id');
+            $table->foreign('vehicle_model_id')->references('id')->on('vehicle_models');
             $table->timestamps();
         });
     }

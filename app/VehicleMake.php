@@ -4,18 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Driver extends Model
+class VehicleMake extends Model
 {
-    protected $table='drivers';
+    protected $table='vehicle_makes';
     protected $primaryKey='id';
     public $timestamps=true;
     protected $fillable =[
-		'first_name',
-        'last_name',
-        'phone_number',
-        'dni',
-        'gender',
-        'active'
+		'name',
+		'code',
+        'logo',
+		'vehicle_model_id'
     ];
     protected $guarded =[
     ];

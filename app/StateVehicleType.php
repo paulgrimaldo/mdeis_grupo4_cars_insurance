@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class StateVehicleType extends Model
 {
-    protected $table='state_vehicle_type';
+    protected $table='state_vehicle_types';
     protected $primaryKey='id';
     public $timestamps=true;
     protected $fillable =[

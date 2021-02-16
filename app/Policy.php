@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Policy extends Model
 {
-    protected $table='policy';
+    protected $table='policies';
     protected $primaryKey='id';
     public $timestamps=true;
     protected $fillable =[

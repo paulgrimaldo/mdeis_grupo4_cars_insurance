@@ -21,6 +21,7 @@ Route::resource('vehicle_models', 'VehicleModelController');
 Route::resource('vehicle_makes', 'VehicleMakeController');
 
 
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

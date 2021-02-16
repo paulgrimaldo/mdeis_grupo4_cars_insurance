@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class BranchOffice extends Model
 {
-    protected $table='branch_office';
+    protected $table='branch_offices';
     protected $primaryKey='id';
     public $timestamps=true;
     protected $fillable =[

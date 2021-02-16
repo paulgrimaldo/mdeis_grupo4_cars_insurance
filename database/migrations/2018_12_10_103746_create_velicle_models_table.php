@@ -14,12 +14,12 @@ class CreateVelicleModelsTable extends Migration
     public function up()
     {
         Schema::create('vehicle_models', function (Blueprint $table) {
-          $table->increments('id');
+          $table->bigIncrements('id');
           $table->string('name');
           $table->string('code');
-          $table->integer('make_id')->unsigned()->index();
+          $table->unsignedBigInteger('vehicle_type_id');
+          $table->foreign('vehicle_type_id')->references('id')->on('vehicle_types');
           $table->timestamps();
-          $table->foreign('make_id')->references('id')->on('vehicle_makes');
         });
     }
 
@@ -30,7 +30,7 @@ class CreateVelicleModelsTable extends Migration
      */
     public function down()
     {
-        Schema::table('vehicle_model', function (Blueprint $table) {
+        Schema::table('vehicle_models', function (Blueprint $table) {
             //
         });
     }
