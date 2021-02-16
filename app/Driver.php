@@ -20,4 +20,12 @@ class Driver extends Model
     protected $guarded =[
     ];
 
+
+    public function policies()
+    {
+      return $this->hasMany('App\Policy','driver_id','id');
+    }
+
+
+
 }

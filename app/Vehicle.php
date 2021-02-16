@@ -18,4 +18,21 @@ class Vehicle extends Model
     protected $guarded =[
     ];
 
+
+    public function vehicle_make()
+    {
+      return $this->belongsTo('App\VehicleMake','vehicle_make_id','id')->with('vehicle_model');
+    }
+
+    public function year()
+    {
+      return $this->belongsTo('App\Year','year_id','id');
+    }
+
+    public function policy()
+    {
+      return $this->hasOne('App\Policy','vehicle_id','id');
+    }
+
+
 }

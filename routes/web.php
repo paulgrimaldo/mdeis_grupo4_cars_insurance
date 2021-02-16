@@ -19,6 +19,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('vehicle_models', 'VehicleModelController');
 Route::resource('vehicle_makes', 'VehicleMakeController');
+Route::get('report', 'ReportController@index');
+Route::post('report/quotation', 'ReportController@quotation');
+Route::post('report/policy', 'ReportController@policy');
+Route::post('report/quotation_unconfirmed', 'ReportController@quotation_unconfirmed');
+Route::post('report/policy_expire', 'ReportController@policy_expire');
 
 
 

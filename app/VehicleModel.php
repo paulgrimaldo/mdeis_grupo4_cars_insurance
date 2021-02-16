@@ -17,4 +17,12 @@ class VehicleModel extends Model
     protected $guarded =[
     ];
 
+
+
+    public function vehicle_type()
+    {
+      return $this->belongsTo('App\VehicleType','vehicle_type_id','id');
+    }
+
+
 }

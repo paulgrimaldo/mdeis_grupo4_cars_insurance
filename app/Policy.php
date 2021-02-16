@@ -26,5 +26,23 @@ class Policy extends Model
     protected $guarded =[
     ];
         
+    public function vehicle()
+    {
+      return $this->belongsTo('App\Vehicle','vehicle_id','id')->with('vehicle_make')->with('year');
+    }
+
+
+    public function driver()
+    {
+      return $this->belongsTo('App\Driver','driver_id','id');
+    }
+
+
+    public function branch_office()
+    {
+      return $this->belongsTo('App\BranchOffice','branch_office_id','id');
+    }
+
+
 
 }

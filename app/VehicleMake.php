@@ -18,4 +18,10 @@ class VehicleMake extends Model
     protected $guarded =[
     ];
 
+
+    public function vehicle_model()
+    {
+      return $this->belongsTo('App\VehicleModel','vehicle_model_id','id');
+    }
+
 }
