@@ -19,3 +19,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('vehicle_models', 'VehicleModelController');
 Route::resource('vehicle_makes', 'VehicleMakeController');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

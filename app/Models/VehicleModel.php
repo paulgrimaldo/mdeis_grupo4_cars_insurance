@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Smartisan\Filters\Traits\Filterable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -10,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class VehicleModel extends Model
 {
-    use Filterable;
 
     /** @var string Filter Class */
     protected $filters = 'App\Filters\VehicleModelFilter';
@@ -47,6 +45,6 @@ class VehicleModel extends Model
         'id',
         'name',
         'code',
-        'make_id',     
+        'make_id',
     ];
 }
