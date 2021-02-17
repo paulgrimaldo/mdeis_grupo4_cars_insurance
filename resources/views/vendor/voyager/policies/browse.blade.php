@@ -27,6 +27,11 @@
                 </a>
             @endif
         @endcan
+        @can('reports', app($dataType->model_name))
+            <a href="{{ route('reports.index') }}" class="btn btn-info btn-add-new">
+                <i class="voyager-company"></i> <span>Reports</span>
+            </a>
+        @endcan
         @can('delete', app($dataType->model_name))
             @if($usesSoftDeletes)
                 <input type="checkbox" @if ($showSoftDeleted) checked @endif id="show_soft_deletes" data-toggle="toggle"

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-02-2021 a las 06:47:31
+-- Tiempo de generación: 17-02-2021 a las 13:59:54
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.13
 
@@ -223,7 +223,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (10, 'state_vehicle_types', 'state-vehicle-types', 'State Vehicle Type', 'State Vehicle Types', 'voyager-company', 'App\\StateVehicleType', NULL, NULL, NULL, 1, 1, '{\"order_column\":\"id\",\"order_display_column\":\"id\",\"order_direction\":\"asc\",\"default_search_key\":\"id\",\"scope\":null}', '2021-02-17 01:13:49', '2021-02-17 09:30:45'),
 (11, 'drivers', 'drivers', 'Driver', 'Drivers', NULL, 'App\\Driver', NULL, NULL, NULL, 1, 1, '{\"order_column\":\"id\",\"order_display_column\":\"first_name\",\"order_direction\":\"asc\",\"default_search_key\":\"id\"}', '2021-02-17 01:17:15', '2021-02-17 01:17:15'),
 (12, 'branch_offices', 'branch-offices', 'Branch Office', 'Branch Offices', 'voyager-company', 'App\\BranchOffice', NULL, NULL, NULL, 1, 1, '{\"order_column\":\"id\",\"order_display_column\":\"id\",\"order_direction\":\"asc\",\"default_search_key\":\"id\",\"scope\":null}', '2021-02-17 01:21:40', '2021-02-17 01:22:27'),
-(13, 'policies', 'policies', 'Policy', 'Policies', 'voyager-company', 'App\\Policy', NULL, 'App\\Http\\Controllers\\PolicyController', NULL, 1, 1, '{\"order_column\":\"id\",\"order_display_column\":\"id\",\"order_direction\":\"asc\",\"default_search_key\":\"id\",\"scope\":null}', '2021-02-17 03:45:59', '2021-02-17 07:26:52'),
+(13, 'policies', 'policies', 'Policy', 'Policies', 'voyager-company', 'App\\Policy', NULL, 'App\\Http\\Controllers\\PolicyController', NULL, 1, 1, '{\"order_column\":\"id\",\"order_display_column\":\"id\",\"order_direction\":\"asc\",\"default_search_key\":\"id\",\"scope\":null}', '2021-02-17 03:45:59', '2021-02-17 16:26:00'),
 (15, 'permissions', 'permissions', 'Permission', 'Permissions', 'voyager-lock', 'TCG\\Voyager\\Models\\Permission', NULL, NULL, NULL, 1, 1, '{\"order_column\":\"id\",\"order_display_column\":\"key\",\"order_direction\":\"asc\",\"default_search_key\":\"id\",\"scope\":null}', '2021-02-17 07:44:53', '2021-02-17 08:01:37');
 
 -- --------------------------------------------------------
@@ -323,9 +323,9 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (12, 1, 'Vehicle Models', '', '_self', 'voyager-company', NULL, 22, 2, '2021-02-17 00:54:05', '2021-02-17 03:59:15', 'voyager.vehicle-models.index', NULL),
 (13, 1, 'Vehicle Makes', '', '_self', 'voyager-company', NULL, 22, 3, '2021-02-17 01:03:17', '2021-02-17 03:59:20', 'voyager.vehicle-makes.index', NULL),
 (14, 1, 'Vehicles', '', '_self', 'voyager-company', NULL, 22, 4, '2021-02-17 01:05:51', '2021-02-17 03:59:24', 'voyager.vehicles.index', NULL),
-(15, 1, 'Years', '', '_self', 'voyager-company', NULL, 21, 2, '2021-02-17 01:07:41', '2021-02-17 03:58:31', 'voyager.years.index', NULL),
-(16, 1, 'States', '', '_self', 'voyager-company', NULL, 21, 1, '2021-02-17 01:12:16', '2021-02-17 03:58:31', 'voyager.states.index', NULL),
-(17, 1, 'State Vehicle Types', '', '_self', 'voyager-company', NULL, 21, 3, '2021-02-17 01:13:49', '2021-02-17 03:58:34', 'voyager.state-vehicle-types.index', NULL),
+(15, 1, 'Years', '', '_self', 'voyager-company', NULL, 21, 3, '2021-02-17 01:07:41', '2021-02-17 09:55:08', 'voyager.years.index', NULL),
+(16, 1, 'States', '', '_self', 'voyager-company', NULL, 21, 2, '2021-02-17 01:12:16', '2021-02-17 09:55:08', 'voyager.states.index', NULL),
+(17, 1, 'State Vehicle Types', '', '_self', 'voyager-company', NULL, 21, 4, '2021-02-17 01:13:49', '2021-02-17 09:55:08', 'voyager.state-vehicle-types.index', NULL),
 (18, 1, 'Drivers', '', '_self', 'voyager-company', '#000000', NULL, 10, '2021-02-17 01:17:15', '2021-02-17 07:45:06', 'voyager.drivers.index', 'null'),
 (19, 1, 'Branch Offices', '', '_self', 'voyager-company', NULL, NULL, 11, '2021-02-17 01:21:40', '2021-02-17 07:45:06', 'voyager.branch-offices.index', NULL),
 (20, 1, 'Policies', '', '_self', 'voyager-company', NULL, NULL, 12, '2021-02-17 03:45:59', '2021-02-17 07:45:06', 'voyager.policies.index', NULL),
@@ -494,7 +494,8 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (78, 'edit_permissions', 'permissions', '2021-02-17 07:44:53', '2021-02-17 07:44:53'),
 (79, 'add_permissions', 'permissions', '2021-02-17 07:44:53', '2021-02-17 07:44:53'),
 (80, 'delete_permissions', 'permissions', '2021-02-17 07:44:53', '2021-02-17 07:44:53'),
-(82, 'quotation_policies', 'policies', '2021-02-17 07:49:06', '2021-02-17 08:01:46');
+(82, 'quotation_policies', 'policies', '2021-02-17 07:49:06', '2021-02-17 08:01:46'),
+(83, 'reports_policies', 'policies', '2021-02-17 16:55:07', '2021-02-17 16:55:34');
 
 -- --------------------------------------------------------
 
@@ -513,6 +514,7 @@ CREATE TABLE `permission_role` (
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (1, 1),
+(1, 3),
 (2, 1),
 (3, 1),
 (4, 1),
@@ -583,16 +585,23 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (69, 1),
 (70, 1),
 (71, 1),
+(71, 3),
 (72, 1),
+(72, 3),
 (73, 1),
+(73, 3),
 (74, 1),
+(74, 3),
 (75, 1),
+(75, 3),
 (76, 1),
 (77, 1),
 (78, 1),
 (79, 1),
 (80, 1),
-(82, 1);
+(82, 1),
+(82, 3),
+(83, 1);
 
 -- --------------------------------------------------------
 
@@ -663,7 +672,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'Administrator', '2021-02-17 00:26:49', '2021-02-17 00:26:49'),
-(2, 'user', 'Normal User', '2021-02-17 00:30:47', '2021-02-17 00:30:47');
+(2, 'user', 'Normal User', '2021-02-17 00:30:47', '2021-02-17 00:30:47'),
+(3, 'insurer', 'Insurer', '2021-02-17 16:41:14', '2021-02-17 16:41:14');
 
 -- --------------------------------------------------------
 
@@ -792,7 +802,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$/cvMDrVUYzC1xIogQWEkJuss0t90Hl2hjKwCJjJ4UXVGFUkb6ids6', NULL, NULL, '2021-02-17 00:24:03', '2021-02-17 00:26:49');
+(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$/cvMDrVUYzC1xIogQWEkJuss0t90Hl2hjKwCJjJ4UXVGFUkb6ids6', NULL, NULL, '2021-02-17 00:24:03', '2021-02-17 00:26:49'),
+(2, 3, 'Insurer', 'insurer@insurer.com', 'users/default.png', NULL, '$2y$10$v/i2/7Nx6RZzRhy8wDb0pOLCMI1qISJ/OdhMo/GqUhLKXmiEAOp6i', NULL, '{\"locale\":\"en\"}', '2021-02-17 16:41:41', '2021-02-17 16:41:41');
 
 -- --------------------------------------------------------
 
@@ -1147,7 +1158,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT de la tabla `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`
@@ -1159,7 +1170,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT de la tabla `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT de la tabla `policies`
@@ -1171,7 +1182,7 @@ ALTER TABLE `policies`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `settings`
@@ -1201,7 +1212,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `vehicles`
