@@ -21,7 +21,9 @@ class Policy extends Model
         'amount',
         'vehicle_id',
         'driver_id',
-        'branch_office_id'
+        'branch_office_id',
+        'signed',
+        'signed_at'
     ];
     protected $guarded = [
     ];

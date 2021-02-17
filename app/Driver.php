@@ -15,7 +15,8 @@ class Driver extends Model
         'phone_number',
         'dni',
         'gender',
-        'active'
+        'active',
+        'user_id'
     ];
     protected $guarded =[
     ];

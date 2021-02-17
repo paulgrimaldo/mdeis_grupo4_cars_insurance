@@ -117,4 +117,28 @@ class PolicyController extends VoyagerBaseController
                 'alert-type' => 'success',
             ]);
     }
+
+    public function viewDetail(Policy $policy)
+    {
+        $view = \View::make('policies.show', compact('policy'))->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream();
+    }
+
+    public function viewSign(Policy $policy)
+    {
+        return view('policies.signing', compact('policy'));
+    }
+
+    public function sign(Policy $policy, Request $request)
+    {
+        if ($request->sign != 'on') {
+            abort(500, "Can't store the signature");
+        }
+        $policy->signed = 1;
+        $policy->signed_at = Carbon::now()->toDateTimeString();
+        $policy->save();
+        return redirect()->route('home')->with(['status' => 'Policy signed successfully']);
+    }
 }

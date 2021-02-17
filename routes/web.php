@@ -19,8 +19,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('vehicle_models', 'VehicleModelController');
 Route::resource('vehicle_makes', 'VehicleMakeController');
-
-
+Route::get('/policies/{policy}', 'PolicyController@viewDetail')->name('policies.view');
+Route::get('/policies/{policy}/sign', 'PolicyController@viewSign')->name('policies.signing');
+Route::post('/policies/{policy}/sign', 'PolicyController@sign')->name('policies.signing.store');
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/policies/create-policy', 'PolicyController@createPolicy')->name('policies.create.policy');
     Route::post('/policies/create-policy', 'PolicyController@storePolicy')->name('policies.policy.store');

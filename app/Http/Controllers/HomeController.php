@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Driver;
+use App\Policy;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $driver = Driver::where('user_id', auth()->id())->first();
+        if ($driver == null) {
+            abort(403, 'User not configured to view policies');
+        }
+        $policies = Policy::where(
+            [
+                'driver_id' => $driver->id,
+                'type' => Policy::$POLICY_TYPE
+            ]
+        )->get();
+        return view('home', compact('policies'));
     }
 
     public function welcome()
