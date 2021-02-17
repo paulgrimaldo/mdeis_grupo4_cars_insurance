@@ -15,21 +15,21 @@ class CreatePoliciesTable extends Migration
     {
         Schema::create('policies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('policy_number');
+            $table->integer('policy_number')->nullable();
             $table->date('policy_effective_date');
-            $table->double('total_amount',12, 2);   
+            $table->double('total_amount',12, 2);
             $table->tinyInteger('active');
             $table->date('date_start');
             $table->date('date_end');
             $table->tinyInteger('type');
-            $table->double('discount',12, 2);   
-            $table->double('amount',12, 2);   
+            $table->double('discount',12, 2);
+            $table->double('amount',12, 2);
             $table->unsignedBigInteger('vehicle_id');
-            $table->foreign('vehicle_id')->references('id')->on('vehicles'); 
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
             $table->unsignedBigInteger('driver_id');
-            $table->foreign('driver_id')->references('id')->on('drivers');  
+            $table->foreign('driver_id')->references('id')->on('drivers');
             $table->unsignedBigInteger('branch_office_id');
-            $table->foreign('branch_office_id')->references('id')->on('branch_offices');            
+            $table->foreign('branch_office_id')->references('id')->on('branch_offices');
             $table->timestamps();
         });
     }

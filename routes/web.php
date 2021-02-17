@@ -26,7 +26,8 @@ Route::post('report/quotation_unconfirmed', 'ReportController@quotation_unconfir
 Route::post('report/policy_expire', 'ReportController@policy_expire');
 
 
-
 Route::group(['prefix' => 'admin'], function () {
+    Route::get('/policies/create-policy', 'PolicyController@createPolicy')->name('policies.create.policy');
+    Route::post('/policies/create-policy', 'PolicyController@storePolicy')->name('policies.policy.store');
     Voyager::routes();
 });
